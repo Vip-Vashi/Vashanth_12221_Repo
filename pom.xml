@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.springboot</groupId>
-	<artifactId>MatrimonialService</artifactId>
+	<artifactId>Jenkinsintegration</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>MatrimonialService</name>
 	<description>Demo project for Spring Boot</description>

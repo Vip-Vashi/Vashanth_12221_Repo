@@ -59,7 +59,7 @@ class UserServiceImplTest {
 	@Test
 	
 	void testDeleteUserIfNotPresentOrNull() {
-		assertEquals("Failure",userServiceImpl.deleteUser(20));
+		assertEquals("Failure",userServiceImpl.deleteUser(80));
 	}
 //
 //	@Test

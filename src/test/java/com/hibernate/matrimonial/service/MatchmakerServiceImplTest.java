@@ -47,12 +47,12 @@ class MatchmakerServiceImplTest {
 //		assertEquals("Success",matchmakerServiceImpl.updateMatchmaker(matchmaker));
 //	}
 //	
-//	@Test
-//	void testUpdateMatchmakerIfNullOrNotPresent() {
-//		Matchmaker matchmaker = new Matchmaker(99,"naveen","8899","Theni");
-//		assertEquals("Failed",matchmakerServiceImpl.updateMatchmaker(matchmaker));
-//	}
-//////	
+	@Test
+	void testUpdateMatchmakerIfNullOrNotPresent() {
+		Matchmaker matchmaker = new Matchmaker(99,"naveen","8899","Theni");
+		assertEquals("Failed",matchmakerServiceImpl.updateMatchmaker(matchmaker));
+	}
+////	
 //	
 //	@Test
 //	void testGetAll() {

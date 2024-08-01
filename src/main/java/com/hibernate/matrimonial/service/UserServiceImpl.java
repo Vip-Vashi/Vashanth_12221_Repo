@@ -8,7 +8,8 @@ import com.hibernate.matrimonial.model.User;
 import com.hibernate.matrimonial.repository.UserRepository;
 @Service
 public class UserServiceImpl implements UserService {
-	
+	String success = "Success";
+	String fail = "Failure";
    private  UserRepository repo;
  
 	public UserServiceImpl(UserRepository repo) {
@@ -18,32 +19,32 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User getUserById(int id) {
-		// TODO Auto-generated method stub
+		
 		return repo.findUById(id);
 	}
 
 	@Override
 	public String saveUser(User user) {
-		// TODO Auto-generated method stub
+		
 		if(user!=null) {
 			repo.saveU(user);
-			return "Success";
+			return success;
 		}
 		else {
-			return "Failure";
+			return fail;
 		}
 		
 	}
 
 	@Override
 	public String deleteUser(int id) {
-		// TODO Auto-generated method stub
+		
 		if(repo.findUById(id)!=null) {
 			repo.deleteU(id);
-			return "Success";
+			return success;
 		}
 		else {
-			return"Failure";
+			return fail;
 		}
 	
 		
@@ -51,10 +52,10 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public String updateUser(User user) {
-		// TODO Auto-generated method stub
+		
 		if(repo.findUById(user.getUid())!= null) {
 		repo.updateU(user);
-		return "Success";
+		return success;
 		}
 		else {
 			return "Failed";
@@ -63,7 +64,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> getAllUsers() {
-		// TODO Auto-generated method stub
+	
 		return repo.findAllUsers();
 	}
 

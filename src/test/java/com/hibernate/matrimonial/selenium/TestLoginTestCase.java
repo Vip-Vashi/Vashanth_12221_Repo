@@ -2,6 +2,8 @@ package com.hibernate.matrimonial.selenium;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.Duration;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,8 +11,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-class LoginTestCase {
+class TestLoginTestCase {
 	
 	WebDriver driver;
 	@BeforeEach
@@ -56,7 +59,8 @@ class LoginTestCase {
 		    driver.findElement(By.cssSelector(".text-white")).click();
 		   
 		    assertEquals("Invalid credentials. Please try again.",driver.switchTo().alert().getText());
-		    Thread.sleep(10000);
+		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+			  wait.withTimeout(Duration.ofSeconds(3));
 
 
 	} 

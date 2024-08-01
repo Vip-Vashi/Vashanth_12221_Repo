@@ -2,14 +2,18 @@ package com.hibernate.matrimonial.selenium;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.Duration;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-class AddUserTC {
+class TestAddUserTC {
 	WebDriver driver;
 
 	@BeforeEach
@@ -45,10 +49,11 @@ class AddUserTC {
 	  	 driver.findElement(By.name("sts")).sendKeys("Single");
 		 driver.findElement(By.xpath("//option[. = '4']")).click();
 		  driver.findElement(By.id("submit")).submit();
-		  Thread.sleep(2000);
+		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		  wait.until(ExpectedConditions.alertIsPresent());
 		  assertEquals("Data added Successfully", driver.switchTo().alert().getText());
 //		  driver.switchTo().alert().accept();
-		  Thread.sleep(10000);
+		  wait.withTimeout(Duration.ofSeconds(5));
 	  }
 	 
 	 
@@ -77,10 +82,11 @@ class AddUserTC {
 	  	 driver.findElement(By.name("sts")).sendKeys("Single");
 		 driver.findElement(By.xpath("//option[. = '4']")).click();
 		  driver.findElement(By.id("submit")).submit();
-		  Thread.sleep(2000);
+		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		  wait.until(ExpectedConditions.alertIsPresent());
 		  assertEquals("Minimum Age is 18 !!! Please Enter the Valid Inputs!!!", driver.switchTo().alert().getText());
 		  driver.switchTo().alert().accept();
-		  Thread.sleep(10000);
+		  wait.withTimeout(Duration.ofSeconds(5));
 	  }
 	 
 	 
@@ -111,10 +117,11 @@ class AddUserTC {
 	  	 driver.findElement(By.name("sts")).sendKeys("Single");
 		 driver.findElement(By.xpath("//option[. = '4']")).click();
 		  driver.findElement(By.id("submit")).submit();
-		  Thread.sleep(2000);
+		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		  wait.until(ExpectedConditions.alertIsPresent());
 		  assertEquals("Please enter Name !!! Please Enter the Valid Inputs!!!", driver.switchTo().alert().getText());
 		  driver.switchTo().alert().accept();
-		  Thread.sleep(10000);
+		  wait.withTimeout(Duration.ofSeconds(5));
 	  }
 	 
 

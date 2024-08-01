@@ -17,20 +17,20 @@ public class MatchmakerRepoImpl implements MatchmakerRepository{
 	EntityManager eManager;
 	@Override
 	public Matchmaker findUById(int mid) {
-		// TODO Auto-generated method stub
+		
 		return  eManager.find(Matchmaker.class, mid);
 	}
 
 	@Override
 	public void savem(Matchmaker matchmaker) {
-		// TODO Auto-generated method stub
+		
 		eManager.persist(matchmaker);
 		
 	}
 
 	@Override
 	public void deletem(int mid) {
-		// TODO Auto-generated method stub
+		
 		Matchmaker matchToDelete = findUById(mid);
 		if (matchToDelete != null) {
 			eManager.remove(matchToDelete);
@@ -46,7 +46,7 @@ public class MatchmakerRepoImpl implements MatchmakerRepository{
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Matchmaker> findAllmatch() {
-		// TODO Auto-generated method stub
+	
 		String hql = "from Matchmaker";
 		Query query = eManager.createQuery(hql);
 		return query.getResultList();

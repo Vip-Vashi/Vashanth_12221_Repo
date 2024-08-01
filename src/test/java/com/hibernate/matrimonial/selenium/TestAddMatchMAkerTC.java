@@ -2,14 +2,18 @@ package com.hibernate.matrimonial.selenium;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.Duration;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-class AddMatchMAkerTC {
+class TestAddMatchMAkerTC {
 	WebDriver driver;
 
 	@BeforeEach
@@ -38,9 +42,13 @@ class AddMatchMAkerTC {
 		  driver.findElement(By.name("cmobile")).sendKeys("8912345678");
 		 
 		  driver.findElement(By.id("submit")).submit();
-		  Thread.sleep(2000);
+		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		  wait.until(ExpectedConditions.alertIsPresent());
+			 
 		  assertEquals("Data added Successfully", driver.switchTo().alert().getText());
-		  Thread.sleep(6000);
+		 
+	       wait.withTimeout(Duration.ofSeconds(3));
+			 
 	  }
 	 
 	 
@@ -57,13 +65,14 @@ class AddMatchMAkerTC {
 		  driver.findElement(By.name("mname")).sendKeys("");
 		  driver.findElement(By.name("addr")).click();
 		  driver.findElement(By.name("addr")).sendKeys("Sinthamani,Madurai-609906");
-		  driver.findElement(By.name("cmobile")).click();
+		
 		  driver.findElement(By.name("cmobile")).sendKeys("8912345678");
 		 
 		  driver.findElement(By.id("submit")).submit();
-		  Thread.sleep(2000);
+		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	      wait.until(ExpectedConditions.alertIsPresent());
+			 
 		  assertEquals("Name Cannot be empty value!!! PLease Enter Name", driver.switchTo().alert().getText());
-		  Thread.sleep(6000);
-	  }
+		  wait.withTimeout(Duration.ofSeconds(3));
 
-}
+}}

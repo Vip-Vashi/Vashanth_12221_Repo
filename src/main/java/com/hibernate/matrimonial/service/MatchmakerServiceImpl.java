@@ -9,7 +9,9 @@ import com.hibernate.matrimonial.repository.MatchmakerRepository;
 @Service
 public class MatchmakerServiceImpl implements MatchmakerService{
     MatchmakerRepository repo;
-    
+    String success = "Success";
+	String fail = "Failure";
+	String failed="Failed";
 	public MatchmakerServiceImpl(MatchmakerRepository repo) {
 		super();
 		this.repo = repo;
@@ -17,51 +19,51 @@ public class MatchmakerServiceImpl implements MatchmakerService{
 
 	@Override
 	public Matchmaker getmatchmakerById(int mid) {
-		// TODO Auto-generated method stub
+		
 		return repo.findUById(mid);
 	}
 
 	@Override
 	public String saveMatchmaker(Matchmaker matchmaker) {
-		// TODO Auto-generated method stub
+		
 		if(matchmaker!=null) {
 			repo.savem(matchmaker);
-			return "Success";
+			return success;
 		}
 		else {
-			return "Failed";
+			return failed;
 		}
 		
 	}
 
 	@Override
 	public String deleteMatchmaker(int mid) {
-		// TODO Auto-generated method stub
+		
 		if(repo.findUById(mid)!=null) {
 			repo.deletem(mid);
-			return "Success";
+			return success;
 		}
 		else {
-			return"Failure";
+			return fail;
 		}
 		
 	}
 
 	@Override
 	public String updateMatchmaker(Matchmaker matchmaker) {
-		// TODO Auto-generated method stub
+		
 		if(repo.findUById(matchmaker.getMid())!=null) {
 			repo.updatem(matchmaker);
-			return"Success";
+			return success;
 		}
 	else {
-		return"Failed";
+		return failed;
 	}
 	}
 
 	@Override
 	public List<Matchmaker> getAll() {
-		// TODO Auto-generated method stub
+		
 		return repo.findAllmatch();
 	}
 

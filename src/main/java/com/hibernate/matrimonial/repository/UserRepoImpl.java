@@ -32,7 +32,7 @@ public class UserRepoImpl implements UserRepository {
 
 	@Override
 	public void deleteU(int id) {
-		// TODO Auto-generated method stub
+		
 		User userToDelete = findUById(id);
 		if (userToDelete != null) {
 			eManager.remove(userToDelete);

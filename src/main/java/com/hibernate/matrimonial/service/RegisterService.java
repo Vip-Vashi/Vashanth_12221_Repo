@@ -9,7 +9,4 @@ public interface RegisterService {
 		
 		public  List<Register> getall ();
 		
-		public void updateuser(Register user);
-		
-		public void deleteuser(int uid);
 }

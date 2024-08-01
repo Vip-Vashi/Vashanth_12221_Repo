@@ -21,6 +21,8 @@ public class RegisterController {
 RegisterServiceImpl service;
 
 
+String success = "success";
+String fail    = "failure";
 
 public RegisterController(RegisterServiceImpl service) {
 	super();
@@ -34,9 +36,9 @@ public String insertuser(@RequestBody Register user) {
 	String msg = "";
 	try {
 		service.adduser(user);
-		msg = "success";
+		msg = success;
 	} catch (Exception e) {
-		msg = "failure";
+		msg = fail;
 	}
 	return msg;
 

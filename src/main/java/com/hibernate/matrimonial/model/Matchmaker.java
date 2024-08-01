@@ -23,7 +23,7 @@ public class Matchmaker {
 	private String maddr;
 	public Matchmaker() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	public Matchmaker(int mid, String mname, String mnum, String maddr) {
 		super();

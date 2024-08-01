@@ -28,7 +28,7 @@ public class Register {
 
 	public Register() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	

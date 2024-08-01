@@ -18,28 +18,17 @@ public class RegisterServiceImpl implements RegisterService{
 
 	@Override
 	public void adduser(Register user) {
-		// TODO Auto-generated method stub
+		
 		repo.save(user);
 	}
 
 	@Override
 	public List<Register> getall() {
-		// TODO Auto-generated method stub
-		return repo.findAll();
+				return repo.findAll();
 	}
 
-	@Override
-	public void updateuser(Register user) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
-	@Override
-	public void deleteuser(int uid) {
-		// TODO Auto-generated method stub
-		
-	}
-	   
 		 public Optional<Register> getuser(int uid) {
 				
 				return   repo.findById(uid);

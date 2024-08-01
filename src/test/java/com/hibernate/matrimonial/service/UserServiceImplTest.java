@@ -85,7 +85,7 @@ class UserServiceImplTest {
 				
 		
 		User user = new User(
-		99,
+		1000,
 		"NandhuKumaran",
 		"Groom","No-9,NanjuPuram,Virudhunagar",40,"IT-Tester","Monthly","Hindu","20000","Unmarried",matchmaker);
 		
